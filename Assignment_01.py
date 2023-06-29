@@ -1,3 +1,5 @@
+import random
+
 board = ["-", "-", "-",
          "-","-","-",
          "-","-","-",]
@@ -20,15 +22,13 @@ def printBoard(board):
     print("-"*13)
       
 #take player input
-def playerInput():
+def playerInput(board):
     choice = int(input("Enter a number (1-9): "))
     if choice >= 1 and choice <=9 and board[choice - 1] == '-':
         board[choice - 1] = currentPlayer
     else:
         print("Please enter a valid input.")
         
-        
-
 
 #check for win or tie
 def checkRow(board):
@@ -74,6 +74,14 @@ def checkTie(board):
 def whoWinTheGame():
     if checkRow(board) or checkColumn(board) or checkDiagonal(board):
         print(f"The winner is {winner}.")
+        
+def computer(board):
+    while currentPlayer == "O":
+        position = random.randint(0,8)
+        if board[position] == "-":
+            board[position] = "O"
+            switchPlayer()
+            
     
 
 #switch the player
@@ -84,9 +92,13 @@ def switchPlayer():
     else:
         currentPlayer = "X"
 
+
 while gameRunning:
     printBoard(board)
-    playerInput()
+    playerInput(board)
     whoWinTheGame()
     checkTie(board)
     switchPlayer()
+    computer(board)
+    whoWinTheGame()
+    checkTie(board)
