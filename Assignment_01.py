@@ -11,11 +11,13 @@ gameRunning = True
 
 # print game board
 def printBoard(board):
+    print("-"*13)
     print('| ' + board[0] + ' | ' + board[1] + ' | '  + board[2] + ' |')
     print("-"*13)
     print('| ' + board[3] + ' | ' + board[4] + ' | '  + board[5] + ' |')
     print("-"*13)
     print('| ' + board[6] + ' | ' + board[7] + ' | '  + board[8] + ' |')
+    print("-"*13)
       
 #take player input
 def playerInput():
@@ -69,12 +71,22 @@ def checkTie(board):
         print("It's a tie.")
         gameRunning = False
 
+def whoWinTheGame():
+    if checkRow(board) or checkColumn(board) or checkDiagonal(board):
+        print(f"The winner is {winner}.")
+    
+
 #switch the player
+def switchPlayer():
+    global currentPlayer
+    if currentPlayer == "X":
+        currentPlayer = "O"
+    else:
+        currentPlayer = "X"
 
 while gameRunning:
     printBoard(board)
     playerInput()
-    # checkRow(board)
-    # checkColumn(board)
-    # checkDiagonal(board)
-    # checkColumn(board)
+    whoWinTheGame()
+    checkTie(board)
+    switchPlayer()
