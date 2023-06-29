@@ -10,7 +10,6 @@ winner = None
 
 gameRunning = True
 
-
 # print game board
 def printBoard(board):
     print("-"*13)
@@ -29,7 +28,7 @@ def playerInput(board):
     else:
         print("Please enter a valid input.")
         
-
+        
 #check for win or tie
 def checkRow(board):
     global winner
@@ -43,6 +42,7 @@ def checkRow(board):
         winner = board[6]
         return True
     
+    
 def checkColumn(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
@@ -55,6 +55,7 @@ def checkColumn(board):
         winner = board[2]
         return True
     
+    
 def checkDiagonal(board):
     global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
@@ -64,16 +65,19 @@ def checkDiagonal(board):
         winner = board[2]
         return True
     
+    
 def checkTie(board):
     global gameRunning
     if "-" not in board:
         printBoard(board)
         print("It's a tie.")
         gameRunning = False
+        
 
 def whoWinTheGame():
     if checkRow(board) or checkColumn(board) or checkDiagonal(board):
         print(f"The winner is {winner}.")
+        
         
 def computer(board):
     while currentPlayer == "O":
@@ -82,8 +86,7 @@ def computer(board):
             board[position] = "O"
             switchPlayer()
             
-    
-
+            
 #switch the player
 def switchPlayer():
     global currentPlayer
@@ -91,7 +94,7 @@ def switchPlayer():
         currentPlayer = "O"
     else:
         currentPlayer = "X"
-
+        
 
 while gameRunning:
     printBoard(board)
