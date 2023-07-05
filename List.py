@@ -14,7 +14,7 @@ for i in range(N):
 for row in commands:
     if "insert" in row:
         arr.insert(int(row[1]), int(row[2]))
-    elif("append" in row):
+    elif "append" in row:
         arr.append(int(row[1]))
     elif "remove" in row:
         arr.remove(int(row[1]))
