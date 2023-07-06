@@ -1,4 +1,4 @@
-s = input()
+s = input("Input: ")
 
 alphanum = False
 alpha = False
