@@ -1,9 +1,5 @@
-class Solution(object):
-    def missingNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
         count = 0
         n = len(nums)
 
@@ -11,8 +7,8 @@ class Solution(object):
             count += i
         
         total = (n*(n+1))/2
+        
 
-        ans = total - count
-        return ans
-
+        return  int(total - count)
+        
         
