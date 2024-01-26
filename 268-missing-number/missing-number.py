@@ -6,9 +6,9 @@ class Solution:
         for i in nums:
             count += i
         
-        total = (n*(n+1))/2
+        total = (n*(n+1))//2
         
 
-        return  int(total - count)
+        return  total - count
         
         
