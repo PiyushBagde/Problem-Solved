@@ -1,7 +1,7 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        summ1 = 0
         summ2 = 0
+        summ1 = 0
 
         if len(nums) == 1:
             return nums[0]
