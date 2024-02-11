@@ -1,13 +1,11 @@
-class Solution(object):
-    def isThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
-        count = 0
-        for div in range(1,n+1):
+class Solution:
+    def isThree(self, n: int) -> bool:
+        count = 2
+        for div in range(2,n):
             if n % div == 0:
                 count += 1
+                if count > 3:
+                    return False
 
         if count == 3:
             return True
