@@ -1,9 +1,5 @@
-class Solution(object):
-    def returnToBoundaryCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def returnToBoundaryCount(self, nums: List[int]) -> int:
         count = 0
         summ = 0
 
@@ -12,4 +8,3 @@ class Solution(object):
             if summ == 0:
                 count += 1
         return count
-        
