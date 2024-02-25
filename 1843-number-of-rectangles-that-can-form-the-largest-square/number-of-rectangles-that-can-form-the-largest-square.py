@@ -10,6 +10,3 @@ class Solution:
             if min(i) >= maxx:
                 count += 1
         return count
-
-
-        
