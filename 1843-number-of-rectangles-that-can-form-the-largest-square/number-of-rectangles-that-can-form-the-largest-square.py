@@ -1,23 +1,15 @@
 class Solution:
     def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
-        maxx = 0
-        count = 0
+        temp = [min(i) for i in rectangles]
 
-        for i in range(len(rectangles)):
-            # find the min value from each sub list
-            minn = min(rectangles[i][0], rectangles[i][1])
-            # find the maximum  of minumumssss
-            if maxx < minn:
-                maxx = minn
+        maxx = max(temp)
 
-        for j in range(len(rectangles)):
-            if maxx <= min(rectangles[j][0], rectangles[j][1]):
+        count  = 0
+
+        for i in rectangles:
+            if min(i) >= maxx:
                 count += 1
-
         return count
-            
-        
-            
 
 
         
