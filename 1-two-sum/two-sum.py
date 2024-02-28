@@ -3,10 +3,12 @@ class Solution:
         temp = {}
 
         for index, value in enumerate(nums):
-            diff = target - value
+            diff = target-value
 
-            if diff in temp:
-                return [index, temp[diff]]
-            else:
-                # save the visited number which is not anser yet
+            if diff not in temp:
                 temp[value] = index
+
+            else:
+                return [index, temp[diff]]
+
+        
