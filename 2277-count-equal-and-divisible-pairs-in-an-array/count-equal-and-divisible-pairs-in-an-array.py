@@ -6,8 +6,7 @@ class Solution:
 
         for i in range(n-1):
             for j in range(i+1, n):
-                if nums[i] == nums[j]:
-                    temp = i*j 
-                    if temp % k ==0:
+                if nums[i] == nums[j] and i*j % k == 0:
+                    
                         count += 1
         return count
