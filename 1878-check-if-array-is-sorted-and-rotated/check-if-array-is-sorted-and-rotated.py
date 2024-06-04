@@ -1,18 +1,9 @@
 class Solution:
     def check(self, nums: List[int]) -> bool:
-        i = 0
-        j = 1
-        flag = 0
-
-        while j < len(nums):
-            if flag == 0 and nums[i] > nums[j]:
-                flag = 1
-                if nums[0] < nums[j]:
-                    return False
-            elif flag == 1:
-                if nums[i] > nums[j] or nums[0] < nums[j]:
-                    return False
-            i = j
-            j += 1
-        return True
+        count = 0
+        for i in range(len(nums)):
+            if nums[i] > nums[(i+1) % len(nums)]:
+                count += 1
             
+        return False if count > 1 else True
+        
