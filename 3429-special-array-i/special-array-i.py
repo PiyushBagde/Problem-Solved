@@ -3,16 +3,14 @@ class Solution:
         if len(nums) == 0:
             return True
 
-        flag = True
         p = nums[0] % 2
 
         for i in range(1, len(nums)):
             parity = nums[i] % 2
 
             if parity == p:
-                flag = False
-                break
+                return False
             else:
                 p = parity
-        return flag
+        return True
         
