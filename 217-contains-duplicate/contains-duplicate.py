@@ -1,14 +1,11 @@
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        numset = set()
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen = dict()
+
         for i in nums:
-            if i in numset:
+            if i in seen:
                 return True
             else:
-                numset.add(i)
+                seen[i] = 0
         return False
-        
+               
