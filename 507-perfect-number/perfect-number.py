@@ -7,5 +7,8 @@ class Solution:
             if num % (num/i) == 0 and num != num/i:
                 total += num/i
 
+            if total > num:
+                return False
+
         return total == num 
 
