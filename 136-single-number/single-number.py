@@ -1,7 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        set1 = sum(set(nums))
-        summ = sum(nums)
-        return set1*2 - summ
+        dict1 = dict()
 
-        
+        for i in nums:
+            if i in dict1:
+                dict1[i] += 1
+            else:
+                dict1[i] = 1
+        for key, val in dict1.items():
+            if val == 1:
+                return key
