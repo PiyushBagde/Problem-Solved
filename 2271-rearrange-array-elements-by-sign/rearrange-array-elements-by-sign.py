@@ -1,19 +1,21 @@
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:
-        # Brute force
-        pos = []
-        neg = []
-        res = []
+        i = 0 
+        j = 1
+        res = [0] * len(nums)
 
-        for i in nums:
-            if i >= 0:
-                pos.append(i)
+        for k in range(len(nums)): # time complexity O(n)
+            if nums[k] >= 0:
+                res[i] = nums[k]
+                i += 2
             else:
-                neg.append(i)
+                res[j] = nums[k]
+                j += 2
 
-        for i in range(len(pos)):
-            res.append(pos[i])
-            res.append(neg[i])
+        # space complexity O(n)
         return res
-        
+
+
+
+
         
