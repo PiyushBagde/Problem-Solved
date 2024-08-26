@@ -1,9 +1,8 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        nums.sort()
+        hashmap = Counter(nums)
 
-        for i in range(0,len(nums)-1, 2):
-            if nums[i] ^ nums[i+1] != 0:
-                return nums[i]
-        return nums[-1]
+        for key, value in hashmap.items():
+            if value == 1:
+                return key
         
