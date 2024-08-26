@@ -1,6 +1,6 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        hashmap =  Counter(nums)
+        hashmap =  set(nums)
         res = []
 
         for i in range(1, len(nums)+1):
