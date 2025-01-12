@@ -1,20 +1,21 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        
+        unordered_set<int> hashset;
         vector<int> res;
 
-        for( auto n : nums){
-            n = abs(n);
-
-            if ( nums[ n-1 ] < 0) {
-                res.push_back(n);
+        for (int i=0; i < nums.size(); i ++) {
+            if ( hashset.contains(nums[i])) {
+                res.push_back(nums[i]);
             }
             else {
-                nums[ n-1 ] = -nums[ n-1 ];
+                hashset.insert(nums[i]);
             }
         }
-        
+
         return res;
+
+
+        
     }
 };
